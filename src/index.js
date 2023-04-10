@@ -5,6 +5,7 @@ import cors from 'cors';
 
 import './config.js';
 import Auth from "./routes/auth_routes.js";
+import Fund from "./routes/fund_routes.js";
 
 const app = express();
 dotenv.config();
@@ -20,7 +21,7 @@ app.use(cors({
 
 
 //All APi's Endponits
-app.use('/api/v1', Auth,)
+app.use('/api/v1', Auth,Fund)
 
 app.use('*', (req, res) => {
     return res.status(404).json({
